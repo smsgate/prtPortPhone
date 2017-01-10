@@ -17,8 +17,8 @@ http://prt.incore1.ru/get/get-port.php?login=ВашЛогин&pass=ВашПар�
 $login = 'ВашЛогин';
 $pass = 'ВашПароль';
 $path_file = $_SERVER['DOCUMENT_ROOT'] . '/';
-$file_zip = all-port.zip';
-$file_csv = all-port.csv';
+$file_zip = 'all-port.zip';
+$file_csv = 'all-port.csv';
 $curl = curl_init('http://prt.incore1.ru/get/get-port.php?login=' . $login . '&pass=' . $pass);
 $fp = fopen($path_file . $file_zip, 'w');
 curl_setopt($curl, CURLOPT_FILE, $fp);
