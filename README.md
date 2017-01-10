@@ -3,12 +3,12 @@
 ## Прямой запрос:
 
 ```
-http://prt.incore1.ru/get/get-port.php?login=ВашЛогин&pass=ВашПароль
+http://prt.incore1.ru/get/get-port.php?login=ВашЛогин&pass=ВашПарольАпи
 ```
 
 Где:
 * **login** - Логин в нашей системе;
-* **pass** - Пароль.
+* **pass** - Зашифрованный пароль полученный двойным md5.
 
 ## php запрос методом curl:
 
@@ -16,10 +16,11 @@ http://prt.incore1.ru/get/get-port.php?login=ВашЛогин&pass=ВашПар�
 <?php
 $login = 'ВашЛогин';
 $pass = 'ВашПароль';
+$pass_md5 = md5(md5('ВашПароль')); //Шифрованный пароль используемый для API
 $path_file = $_SERVER['DOCUMENT_ROOT'] . '/';
 $file_zip = 'all-port.zip';
 $file_csv = 'all-port.csv';
-$curl = curl_init('http://prt.incore1.ru/get/get-port.php?login=' . $login . '&pass=' . $pass);
+$curl = curl_init('http://prt.incore1.ru/get/get-port.php?login=' . $login . '&pass=' . $pass_md5);
 $fp = fopen($path_file . $file_zip, 'w');
 curl_setopt($curl, CURLOPT_FILE, $fp);
 curl_setopt($curl, CURLOPT_HEADER, 0);
