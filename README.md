@@ -165,14 +165,14 @@ $def_array = unserialize($result);
 
 if(is_array($def_array["phone_code_array"])){
 	foreach($def_array["phone_code_array"] as $def){
-		$numberfrom = $region["numberfrom"]; // Начиная номером телефона
-		$numberto = $region["numberto"]; // Заканчивая номером телефона
-		$regioncode = $region["regioncode"]; // Код региона мобильной сети
-		$utc = $region["utc"]; // Часовой пояс региона по UTC
-		$title = $region["title"]; // Название региона
-		$mcc = $operator["mcc"]; // Мобильный код страны
-		$mnc = $operator["mnc"]; // Код мобильной сети
-		$numbersubject = $region["numbersubject"]; // Код субъекта РФ
+		$numberfrom = $def["numberfrom"]; // Начиная номером телефона
+		$numberto = $def["numberto"]; // Заканчивая номером телефона
+		$regioncode = $def["regioncode"]; // Код региона мобильной сети
+		$utc = $def["utc"]; // Часовой пояс региона по UTC
+		$title = $def["title"]; // Название региона
+		$mcc = $def["mcc"]; // Мобильный код страны
+		$mnc = $def["mnc"]; // Код мобильной сети
+		$numbersubject = $def["numbersubject"]; // Код субъекта РФ
 		//Далее идет Ваша работа с деф-кодами
 	}
 } else {
