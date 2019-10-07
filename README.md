@@ -3,7 +3,7 @@
 ## Прямой запрос:
 
 ```
-http://prt.incore1.ru/get/get-port.php?login=ВашЛогин&pass=ВашПарольАпи
+http://ДОМЕН/get/get-port.php?login=ВашЛогин&pass=ВашПарольАпи
 ```
 
 Где:
@@ -20,7 +20,7 @@ $pass_md5 = md5(md5($pass)); // Шифрованный пароль исполь
 $path_file = $_SERVER['DOCUMENT_ROOT'] . '/';
 $file_zip = 'all-port.zip';
 $file_csv = 'all-port.csv';
-$curl = curl_init('http://prt.incore1.ru/get/get-port.php?login=' . $login . '&pass=' . $pass_md5);
+$curl = curl_init('http://ДОМЕН/get/get-port.php?login=' . $login . '&pass=' . $pass_md5);
 $fp = fopen($path_file . $file_zip, 'w');
 curl_setopt($curl, CURLOPT_FILE, $fp);
 curl_setopt($curl, CURLOPT_HEADER, 0);
@@ -60,7 +60,7 @@ if($curlinfo['content_type'] == 'application/x-zip'){
 ## Прямой запрос:
 
 ```
-http://prt.incore1.ru/get/operators.php?login=ВашЛогин&pass=ВашПарольАпи
+http://ДОМЕН/get/operators.php?login=ВашЛогин&pass=ВашПарольАпи
 ```
 
 Где:
@@ -74,7 +74,7 @@ http://prt.incore1.ru/get/operators.php?login=ВашЛогин&pass=ВашПар
 $login = 'ВашЛогин';
 $pass = 'ВашПароль';
 $pass_md5 = md5(md5($pass)); //Шифрованный пароль используемый для API
-$curl = curl_init('http://prt.incore1.ru/get/operators.php?login=' . $login . '&pass=' . $pass_md5);
+$curl = curl_init('http://ДОМЕН/get/operators.php?login=' . $login . '&pass=' . $pass_md5);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_TIMEOUT, 10);
 $result = curl_exec($curl);
@@ -100,7 +100,7 @@ if(is_array($operators_array["operators"])){
 ## Прямой запрос:
 
 ```
-http://prt.incore1.ru/get/regions.php?login=ВашЛогин&pass=ВашПарольАпи
+http://ДОМЕН/get/regions.php?login=ВашЛогин&pass=ВашПарольАпи
 ```
 
 Где:
@@ -114,7 +114,7 @@ http://prt.incore1.ru/get/regions.php?login=ВашЛогин&pass=ВашПаро
 $login = 'ВашЛогин';
 $pass = 'ВашПароль';
 $pass_md5 = md5(md5($pass)); // Шифрованный пароль используемый для API
-$curl = curl_init('http://prt.incore1.ru/get/regions.php?login=' . $login . '&pass=' . $pass_md5);
+$curl = curl_init('http://ДОМЕН/get/regions.php?login=' . $login . '&pass=' . $pass_md5);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_TIMEOUT, 10);
 $result = curl_exec($curl);
@@ -142,7 +142,7 @@ if(is_array($regions_array["regions"])){
 ## Прямой запрос:
 
 ```
-http://prt.incore1.ru/get/update-def-timezone.php?login=ВашЛогин&pass=ВашПарольАпи
+http://ДОМЕН/get/update-def-timezone.php?login=ВашЛогин&pass=ВашПарольАпи
 ```
 
 Где:
@@ -156,7 +156,7 @@ http://prt.incore1.ru/get/update-def-timezone.php?login=ВашЛогин&pass=В
 $login = 'ВашЛогин';
 $pass = 'ВашПароль';
 $pass_md5 = md5(md5($pass)); //Шифрованный пароль используемый для API
-$curl = curl_init('http://prt.incore1.ru/get/update-def-timezone.php?login=' . $login . '&pass=' . $pass_md5);
+$curl = curl_init('http://ДОМЕН/get/update-def-timezone.php?login=' . $login . '&pass=' . $pass_md5);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_TIMEOUT, 10);
 $result = curl_exec($curl);
