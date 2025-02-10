@@ -167,6 +167,7 @@ if(is_array($def_array["phone_code_array"])){
 	foreach($def_array["phone_code_array"] as $def){
 		$numberfrom = $def["numberfrom"]; // Начиная номером телефона
 		$numberto = $def["numberto"]; // Заканчивая номером телефона
+		$ownerid = $def["ownerid"]; // Заканчивая номером телефона
 		$regioncode = $def["regioncode"]; // Код региона мобильной сети
 		$utc = $def["utc"]; // Часовой пояс региона по UTC
 		$title = $def["title"]; // Название региона
